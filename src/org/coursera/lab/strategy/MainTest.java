@@ -1,6 +1,7 @@
 package org.coursera.lab.strategy;
 
 import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
 
 import java.util.ArrayList;
 
@@ -10,6 +11,7 @@ public class MainTest {
 
     @Test
     public void testHandlingStrategies() {
+        Car.resetCarCounter();
         // Test individual handling strategies
         HandlingStrategy safety = new SafetyHandling();
         HandlingStrategy sport = new SportHandling();
@@ -22,6 +24,7 @@ public class MainTest {
 
     @Test
     public void testCarHandling() {
+        Car.resetCarCounter();
         // Test cars with default handling strategies
         Car coupe = new Coupe(new SafetyHandling());
         Car sedan = new Sedan(new SportHandling());
@@ -39,6 +42,7 @@ public class MainTest {
 
     @Test
     public void testDynamicHandlingChange() {
+        Car.resetCarCounter();
         // Test dynamically changing the handling strategy
         Car coupe = new Coupe(new SafetyHandling());
         coupe.handle(); // Expected: "coupe 1 eases through turn"
@@ -50,6 +54,7 @@ public class MainTest {
 
     @Test
     public void testAllCombinations() {
+        Car.resetCarCounter();
         // Instantiate handling strategies
         HandlingStrategy safety = new SafetyHandling();
         HandlingStrategy sport = new SportHandling();

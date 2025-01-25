@@ -82,6 +82,14 @@ abstract class Car{
         System.out.print(name = " ");
         handlingStrategy.handle();
     }
+
+    /**
+     * Reset the counter of Car class to zero.
+     */
+    public static void resetCarCounter() {
+        carCounter = 0;
+    }
+
 }
 /**
  * Concrete class for a coupe car type
